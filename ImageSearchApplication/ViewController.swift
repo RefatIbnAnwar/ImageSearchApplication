@@ -19,7 +19,25 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: UISearchBar(frame: CGRect(x: 0, y: 0, width: 200, height: 20))) 
+        //self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: UISearchBar(frame: CGRect(x: 0, y: 0, width: 200, height: 20)))
+        self.navigationItem.titleView = UISearchBar(frame: CGRect(x: 0, y: 0, width: 200, height: 20))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Options", style: .plain, target: self, action: #selector(showActionSheet)) //UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showActionSheet))
+    }
+    
+    
+    @objc func showActionSheet()
+    {
+        let ac = UIAlertController(title: "Change Gird Style", message: nil, preferredStyle: .actionSheet)
+        ac.addAction(UIAlertAction(title: "2 Image per row", style: .default, handler: changeLayout(action:)))
+        ac.addAction(UIAlertAction(title: "3 Image per row", style: .default, handler: changeLayout(action:)))
+        ac.addAction(UIAlertAction(title: "4 Image per row", style: .default, handler: changeLayout(action:)))
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        ac.popoverPresentationController?.barButtonItem = self.navigationItem.rightBarButtonItem
+            present(ac, animated: true)
+    }
+    
+    func changeLayout(action: UIAlertAction) {
+        
     }
     
 }
