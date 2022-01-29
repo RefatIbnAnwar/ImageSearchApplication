@@ -16,23 +16,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="142" height="124"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.tip" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="m2H-od-osd">
-                        <rect key="frame" x="0.0" y="1" width="142" height="122"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp" translatesAutoresizingMaskIntoConstraints="NO" id="m2H-od-osd">
+                        <rect key="frame" x="5" y="4" width="132" height="116"/>
                     </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="m2H-od-osd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="7Ed-DU-USF"/>
-                <constraint firstAttribute="trailing" secondItem="m2H-od-osd" secondAttribute="trailing" id="Vi5-d3-C3r"/>
-                <constraint firstAttribute="bottom" secondItem="m2H-od-osd" secondAttribute="bottom" id="q9x-3H-k9B"/>
-                <constraint firstItem="m2H-od-osd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="sxy-tV-OBs"/>
+                <constraint firstItem="m2H-od-osd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="7Ed-DU-USF"/>
+                <constraint firstAttribute="trailing" secondItem="m2H-od-osd" secondAttribute="trailing" constant="5" id="Vi5-d3-C3r"/>
+                <constraint firstAttribute="bottom" secondItem="m2H-od-osd" secondAttribute="bottom" constant="4" id="q9x-3H-k9B"/>
+                <constraint firstItem="m2H-od-osd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="sxy-tV-OBs"/>
             </constraints>
             <size key="customSize" width="142" height="124"/>
+            <connections>
+                <outlet property="flickrImageView" destination="m2H-od-osd" id="tho-hR-SCA"/>
+            </connections>
             <point key="canvasLocation" x="198.55072463768118" y="124.55357142857142"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="pencil.tip" catalog="system" width="99" height="128"/>
+        <image name="temp" width="1000" height="1250"/>
     </resources>
 </document>
