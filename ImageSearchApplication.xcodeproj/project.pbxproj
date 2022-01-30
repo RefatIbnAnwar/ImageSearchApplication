@@ -21,6 +21,12 @@
 		1D65AB7327A4855F0020CA35 /* ImageCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D65AB7127A4855F0020CA35 /* ImageCVCell.xib */; };
 		1DF142A627A6BCDB00AFA6CF /* FlickrSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF142A527A6BCDB00AFA6CF /* FlickrSearchService.swift */; };
 		1DF142B027A6C3E100AFA6CF /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF142AF27A6C3E100AFA6CF /* SearchViewModel.swift */; };
+		1DF142B227A6D34800AFA6CF /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF142B127A6D34800AFA6CF /* ImageModel.swift */; };
+		1DF142B427A6D50400AFA6CF /* UIImageExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF142B327A6D50400AFA6CF /* UIImageExtention.swift */; };
+		1DF142B827A6D9BC00AFA6CF /* ImageDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF142B727A6D9BC00AFA6CF /* ImageDownloadManager.swift */; };
+		1DF142BA27A6DA0800AFA6CF /* ImageDownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF142B927A6DA0800AFA6CF /* ImageDownloadOperation.swift */; };
+		1DF142BC27A6DD9500AFA6CF /* DataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF142BB27A6DD9500AFA6CF /* DataCache.swift */; };
+		1DF142BE27A6DDE800AFA6CF /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF142BD27A6DDE800AFA6CF /* Result.swift */; };
 		31603F7CFE4CE3AAAA0E4F8F /* Pods_ImageSearchApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA43CF082188B4560A1A05F9 /* Pods_ImageSearchApplication.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +47,12 @@
 		1D65AB7127A4855F0020CA35 /* ImageCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCVCell.xib; sourceTree = "<group>"; };
 		1DF142A527A6BCDB00AFA6CF /* FlickrSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrSearchService.swift; sourceTree = "<group>"; };
 		1DF142AF27A6C3E100AFA6CF /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		1DF142B127A6D34800AFA6CF /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		1DF142B327A6D50400AFA6CF /* UIImageExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtention.swift; sourceTree = "<group>"; };
+		1DF142B727A6D9BC00AFA6CF /* ImageDownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadManager.swift; sourceTree = "<group>"; };
+		1DF142B927A6DA0800AFA6CF /* ImageDownloadOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadOperation.swift; sourceTree = "<group>"; };
+		1DF142BB27A6DD9500AFA6CF /* DataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCache.swift; sourceTree = "<group>"; };
+		1DF142BD27A6DDE800AFA6CF /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		33BADB227433C39F89E7D0B0 /* Pods-ImageSearchApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageSearchApplication.release.xcconfig"; path = "Target Support Files/Pods-ImageSearchApplication/Pods-ImageSearchApplication.release.xcconfig"; sourceTree = "<group>"; };
 		7F11ACE02A5556C4916063A6 /* Pods-ImageSearchApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageSearchApplication.debug.xcconfig"; path = "Target Support Files/Pods-ImageSearchApplication/Pods-ImageSearchApplication.debug.xcconfig"; sourceTree = "<group>"; };
 		FA43CF082188B4560A1A05F9 /* Pods_ImageSearchApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageSearchApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +91,8 @@
 		1D091C6F27A46CD400140F4D /* ImageSearchApplication */ = {
 			isa = PBXGroup;
 			children = (
+				1DF142B627A6D99700AFA6CF /* ImageDownloadManeger */,
+				1DF142B527A6D55300AFA6CF /* Image */,
 				1D2DDAE627A5E7A500D5D361 /* Utilities */,
 				1D2DDAE527A5E77200D5D361 /* ViewModels */,
 				1D2DDAE427A5E76A00D5D361 /* Models */,
@@ -126,6 +140,7 @@
 				1D647DFF27A6A323009C98B0 /* FlickrPhoto.swift */,
 				1D647E0127A6A37D009C98B0 /* Photos.swift */,
 				1D647E0327A6A3C3009C98B0 /* SearchModel.swift */,
+				1DF142B127A6D34800AFA6CF /* ImageModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -142,8 +157,27 @@
 			isa = PBXGroup;
 			children = (
 				1D647E0527A6A484009C98B0 /* Constants.swift */,
+				1DF142B327A6D50400AFA6CF /* UIImageExtention.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		1DF142B527A6D55300AFA6CF /* Image */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		1DF142B627A6D99700AFA6CF /* ImageDownloadManeger */ = {
+			isa = PBXGroup;
+			children = (
+				1DF142B727A6D9BC00AFA6CF /* ImageDownloadManager.swift */,
+				1DF142B927A6DA0800AFA6CF /* ImageDownloadOperation.swift */,
+				1DF142BB27A6DD9500AFA6CF /* DataCache.swift */,
+				1DF142BD27A6DDE800AFA6CF /* Result.swift */,
+			);
+			path = ImageDownloadManeger;
 			sourceTree = "<group>";
 		};
 		36A333CC6348591A4AB2E776 /* Frameworks */ = {
@@ -279,13 +313,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DF142B227A6D34800AFA6CF /* ImageModel.swift in Sources */,
 				1D647E0227A6A37D009C98B0 /* Photos.swift in Sources */,
 				1D65AB7227A4855F0020CA35 /* ImageCVCell.swift in Sources */,
 				1D091C7527A46CD400140F4D /* ViewController.swift in Sources */,
 				1DF142A627A6BCDB00AFA6CF /* FlickrSearchService.swift in Sources */,
+				1DF142BA27A6DA0800AFA6CF /* ImageDownloadOperation.swift in Sources */,
+				1DF142BE27A6DDE800AFA6CF /* Result.swift in Sources */,
 				1D091C7127A46CD400140F4D /* AppDelegate.swift in Sources */,
+				1DF142B827A6D9BC00AFA6CF /* ImageDownloadManager.swift in Sources */,
 				1D647E0427A6A3C3009C98B0 /* SearchModel.swift in Sources */,
 				1DF142B027A6C3E100AFA6CF /* SearchViewModel.swift in Sources */,
+				1DF142B427A6D50400AFA6CF /* UIImageExtention.swift in Sources */,
+				1DF142BC27A6DD9500AFA6CF /* DataCache.swift in Sources */,
 				1D647E0027A6A324009C98B0 /* FlickrPhoto.swift in Sources */,
 				1D091C7327A46CD400140F4D /* SceneDelegate.swift in Sources */,
 				1D647E0627A6A484009C98B0 /* Constants.swift in Sources */,

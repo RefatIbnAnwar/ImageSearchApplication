@@ -28,7 +28,9 @@ class SearchViewModel: NSObject {
             if let photos = newPhotos {
                 self.totalPageNo = Int(photos.pages)
                 self.photoArray.append(contentsOf: photos.photo)
+                print(self.photoArray.count , "count")
                 self.dataUpdated?()
+                completion()
             }
             else {
                 completion()

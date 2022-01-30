@@ -20,11 +20,15 @@ class ViewController: UIViewController {
             }()
         }
     }
+    var searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 200, height: 20))
+    
+    private var viewModel = SearchViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationItem.titleView = UISearchBar(frame: CGRect(x: 0, y: 0, width: 200, height: 20))
+        viewModelClosures()
+        self.navigationItem.titleView = searchBar
+        self.searchBar.delegate = self
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Options", style: .plain, target: self, action: #selector(showActionSheet))
     }
     
@@ -75,16 +79,83 @@ class ViewController: UIViewController {
 }
 
 extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate , UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return viewModel.photoArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ImageCVCell else {
             return UICollectionViewCell()
         }
+        cell.flickrImageView.image = nil
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let cell = cell as? ImageCVCell else {
+            return
+        }
+        
+        let model = viewModel.photoArray[indexPath.row]
+        cell.model = ImageModel.init(withPhotos: model)
+        
+        if indexPath.row == (viewModel.photoArray.count - 10) {
+            loadNextPage()
+        }
+    }
     
+    
+}
+
+
+extension ViewController : UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        guard var text = searchBar.text, text.count > 1 else {
+            return
+        }
+        text = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        print(text)
+        
+        self.imageCollectionView.reloadData()
+        
+       
+        
+        viewModel.search(text: text) {
+            print("search completed.")
+        }
+        self.searchBar.resignFirstResponder()
+    }
+}
+
+
+//MARK:- Clousers
+extension ViewController {
+    
+    fileprivate func viewModelClosures() {
+        
+        viewModel.showAlert = { [weak self] (message) in
+            self?.showAlert(message: message)
+        }
+        
+        viewModel.dataUpdated = { [weak self] in
+            print("data source updated")
+            self?.imageCollectionView.reloadData()
+        }
+    }
+    
+    private func loadNextPage() {
+        viewModel.fetchNextPage {
+            print("next page fetched")
+        }
+    }
+    
+    private func showAlert(title: String = "Image Search App", message: String?) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction(title:NSLocalizedString("OK", comment: ""), style: UIAlertAction.Style.default) {(action) in
+        }
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
 }

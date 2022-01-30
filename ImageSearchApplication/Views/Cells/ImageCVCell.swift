@@ -15,6 +15,20 @@ class ImageCVCell: UICollectionViewCell {
             self.flickrImageView.layer.borderWidth = 0.1
         }
     }
+    
+    var model: ImageModel? {
+        didSet {
+            if let model = model {
+                flickrImageView.image = UIImage(named: "placeholder")
+                flickrImageView.downloadImage(model.imageURL)
+            }
+        }
+    }
+    
+    override func prepareForReuse() {
+        flickrImageView.image = nil
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
