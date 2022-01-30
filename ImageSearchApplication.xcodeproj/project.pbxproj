@@ -13,6 +13,10 @@
 		1D091C7827A46CD400140F4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D091C7627A46CD400140F4D /* Main.storyboard */; };
 		1D091C7A27A46CD600140F4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D091C7927A46CD600140F4D /* Assets.xcassets */; };
 		1D091C7D27A46CD600140F4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D091C7B27A46CD600140F4D /* LaunchScreen.storyboard */; };
+		1D647E0027A6A324009C98B0 /* FlickrPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D647DFF27A6A323009C98B0 /* FlickrPhoto.swift */; };
+		1D647E0227A6A37D009C98B0 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D647E0127A6A37D009C98B0 /* Photos.swift */; };
+		1D647E0427A6A3C3009C98B0 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D647E0327A6A3C3009C98B0 /* SearchModel.swift */; };
+		1D647E0627A6A484009C98B0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D647E0527A6A484009C98B0 /* Constants.swift */; };
 		1D65AB7227A4855F0020CA35 /* ImageCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D65AB7027A4855F0020CA35 /* ImageCVCell.swift */; };
 		1D65AB7327A4855F0020CA35 /* ImageCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D65AB7127A4855F0020CA35 /* ImageCVCell.xib */; };
 /* End PBXBuildFile section */
@@ -26,6 +30,10 @@
 		1D091C7927A46CD600140F4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D091C7C27A46CD600140F4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D091C7E27A46CD600140F4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D647DFF27A6A323009C98B0 /* FlickrPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhoto.swift; sourceTree = "<group>"; };
+		1D647E0127A6A37D009C98B0 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
+		1D647E0327A6A3C3009C98B0 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		1D647E0527A6A484009C98B0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1D65AB7027A4855F0020CA35 /* ImageCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCVCell.swift; sourceTree = "<group>"; };
 		1D65AB7127A4855F0020CA35 /* ImageCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCVCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,6 +111,9 @@
 		1D2DDAE427A5E76A00D5D361 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1D647DFF27A6A323009C98B0 /* FlickrPhoto.swift */,
+				1D647E0127A6A37D009C98B0 /* Photos.swift */,
+				1D647E0327A6A3C3009C98B0 /* SearchModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -117,6 +128,7 @@
 		1D2DDAE627A5E7A500D5D361 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				1D647E0527A6A484009C98B0 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -193,10 +205,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D647E0227A6A37D009C98B0 /* Photos.swift in Sources */,
 				1D65AB7227A4855F0020CA35 /* ImageCVCell.swift in Sources */,
 				1D091C7527A46CD400140F4D /* ViewController.swift in Sources */,
 				1D091C7127A46CD400140F4D /* AppDelegate.swift in Sources */,
+				1D647E0427A6A3C3009C98B0 /* SearchModel.swift in Sources */,
+				1D647E0027A6A324009C98B0 /* FlickrPhoto.swift in Sources */,
 				1D091C7327A46CD400140F4D /* SceneDelegate.swift in Sources */,
+				1D647E0627A6A484009C98B0 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
