@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SearchViewController: UIViewController {
 
     @IBOutlet weak var imageCollectionView: UICollectionView! {
         didSet {
@@ -85,7 +85,7 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate , UICollectionViewDelegateFlowLayout {
+extension SearchViewController : UICollectionViewDataSource, UICollectionViewDelegate , UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.photoArray.count
@@ -116,7 +116,7 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate 
 }
 
 
-extension ViewController : UISearchBarDelegate {
+extension SearchViewController : UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         guard var text = searchBar.text, text.count > 1 else {
@@ -138,7 +138,7 @@ extension ViewController : UISearchBarDelegate {
 
 
 //MARK:- Clousers
-extension ViewController {
+extension SearchViewController {
     
     fileprivate func viewModelClosures() {
         
