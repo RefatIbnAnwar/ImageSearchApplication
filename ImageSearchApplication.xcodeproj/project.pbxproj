@@ -27,6 +27,7 @@
 		1DF142BA27A6DA0800AFA6CF /* ImageDownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF142B927A6DA0800AFA6CF /* ImageDownloadOperation.swift */; };
 		1DF142BC27A6DD9500AFA6CF /* DataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF142BB27A6DD9500AFA6CF /* DataCache.swift */; };
 		1DF142BE27A6DDE800AFA6CF /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF142BD27A6DDE800AFA6CF /* Result.swift */; };
+		1DF142C127A6E4FB00AFA6CF /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF142C027A6E4FB00AFA6CF /* Reachability.swift */; };
 		31603F7CFE4CE3AAAA0E4F8F /* Pods_ImageSearchApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA43CF082188B4560A1A05F9 /* Pods_ImageSearchApplication.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		1DF142B927A6DA0800AFA6CF /* ImageDownloadOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadOperation.swift; sourceTree = "<group>"; };
 		1DF142BB27A6DD9500AFA6CF /* DataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCache.swift; sourceTree = "<group>"; };
 		1DF142BD27A6DDE800AFA6CF /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		1DF142C027A6E4FB00AFA6CF /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		33BADB227433C39F89E7D0B0 /* Pods-ImageSearchApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageSearchApplication.release.xcconfig"; path = "Target Support Files/Pods-ImageSearchApplication/Pods-ImageSearchApplication.release.xcconfig"; sourceTree = "<group>"; };
 		7F11ACE02A5556C4916063A6 /* Pods-ImageSearchApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageSearchApplication.debug.xcconfig"; path = "Target Support Files/Pods-ImageSearchApplication/Pods-ImageSearchApplication.debug.xcconfig"; sourceTree = "<group>"; };
 		FA43CF082188B4560A1A05F9 /* Pods_ImageSearchApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageSearchApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +93,8 @@
 		1D091C6F27A46CD400140F4D /* ImageSearchApplication */ = {
 			isa = PBXGroup;
 			children = (
+				1DF142C227A6E67600AFA6CF /* SearchManager */,
+				1DF142BF27A6E4CA00AFA6CF /* InterneReachability */,
 				1DF142B627A6D99700AFA6CF /* ImageDownloadManeger */,
 				1DF142B527A6D55300AFA6CF /* Image */,
 				1D2DDAE627A5E7A500D5D361 /* Utilities */,
@@ -103,7 +107,6 @@
 				1D091C7927A46CD600140F4D /* Assets.xcassets */,
 				1D091C7B27A46CD600140F4D /* LaunchScreen.storyboard */,
 				1D091C7E27A46CD600140F4D /* Info.plist */,
-				1DF142A527A6BCDB00AFA6CF /* FlickrSearchService.swift */,
 			);
 			path = ImageSearchApplication;
 			sourceTree = "<group>";
@@ -178,6 +181,22 @@
 				1DF142BD27A6DDE800AFA6CF /* Result.swift */,
 			);
 			path = ImageDownloadManeger;
+			sourceTree = "<group>";
+		};
+		1DF142BF27A6E4CA00AFA6CF /* InterneReachability */ = {
+			isa = PBXGroup;
+			children = (
+				1DF142C027A6E4FB00AFA6CF /* Reachability.swift */,
+			);
+			path = InterneReachability;
+			sourceTree = "<group>";
+		};
+		1DF142C227A6E67600AFA6CF /* SearchManager */ = {
+			isa = PBXGroup;
+			children = (
+				1DF142A527A6BCDB00AFA6CF /* FlickrSearchService.swift */,
+			);
+			path = SearchManager;
 			sourceTree = "<group>";
 		};
 		36A333CC6348591A4AB2E776 /* Frameworks */ = {
@@ -319,6 +338,7 @@
 				1D091C7527A46CD400140F4D /* ViewController.swift in Sources */,
 				1DF142A627A6BCDB00AFA6CF /* FlickrSearchService.swift in Sources */,
 				1DF142BA27A6DA0800AFA6CF /* ImageDownloadOperation.swift in Sources */,
+				1DF142C127A6E4FB00AFA6CF /* Reachability.swift in Sources */,
 				1DF142BE27A6DDE800AFA6CF /* Result.swift in Sources */,
 				1D091C7127A46CD400140F4D /* AppDelegate.swift in Sources */,
 				1DF142B827A6D9BC00AFA6CF /* ImageDownloadManager.swift in Sources */,

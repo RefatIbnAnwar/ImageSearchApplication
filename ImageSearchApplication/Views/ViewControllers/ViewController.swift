@@ -33,6 +33,13 @@ class ViewController: UIViewController {
     }
     
     
+    func internetReachabiltyTest(){
+        guard (Reachability.currentReachabilityStatus != .notReachable) else {
+            self.showAlert(message: "Internet is down. Please check your connection.")
+            return
+        }
+    }
+    
     @objc func showActionSheet()
     {
         let ac = UIAlertController(title: "Change Gird Style", message: nil, preferredStyle: .actionSheet)
@@ -135,6 +142,7 @@ extension ViewController {
     
     fileprivate func viewModelClosures() {
         
+        self.internetReachabiltyTest()
         viewModel.showAlert = { [weak self] (message) in
             self?.showAlert(message: message)
         }
@@ -146,6 +154,7 @@ extension ViewController {
     }
     
     private func loadNextPage() {
+        self.internetReachabiltyTest()
         viewModel.fetchNextPage {
             print("next page fetched")
         }
